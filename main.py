@@ -5,7 +5,7 @@ import os
 from disciplina import Disciplina
 
 app = Flask(__name__, static_folder='../', static_url_path='')  
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 @app.route("/")
