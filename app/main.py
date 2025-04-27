@@ -1,7 +1,6 @@
 from flask import request, jsonify, send_from_directory
 import pdfplumber
 from app.disciplina import Disciplina
-import os
 
 def configure_routes(app):
     @app.route("/")
