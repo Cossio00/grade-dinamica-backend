@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import pdfplumber
+import os
 from disciplina import Disciplina
 
 app = Flask(__name__, static_folder='../', static_url_path='')  
@@ -41,4 +42,5 @@ def processar_pdf():
     return jsonify([d.to_dict() for d in disciplinas])
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host="0.0.0.0", port=port)
