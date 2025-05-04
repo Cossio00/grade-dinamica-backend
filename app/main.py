@@ -20,6 +20,7 @@ def configure_routes(app):
                 tables = page.extract_tables()
                 for table in tables:
                     for row in table:
+                        print(row)
                         if row and row[-1] == 'AP':
                             codigo, nome = row[1].split(" - ")
                             if len(row) > 10:
